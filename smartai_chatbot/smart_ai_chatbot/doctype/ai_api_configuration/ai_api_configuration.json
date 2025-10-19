@@ -1,0 +1,226 @@
+{
+  "actions": [],
+  "autoname": "field:provider_name",
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "provider_info_section",
+    "provider_name",
+    "model_name",
+    "api_key",
+    "api_endpoint",
+    "provider_url",
+    "capacity_section",
+    "rate_limit",
+    "max_tokens",
+    "temperature",
+    "timeout_seconds",
+    "configuration_section",
+    "status",
+    "priority",
+    "is_fallback",
+    "is_local",
+    "test_results_section",
+    "last_test_time",
+    "last_test_status",
+    "test_error_message",
+    "usage_section",
+    "total_requests",
+    "failed_requests",
+    "avg_response_time",
+    "monthly_cost"
+  ],
+  "fields": [
+    {
+      "fieldname": "provider_info_section",
+      "fieldtype": "Section Break",
+      "label": "Provider Information"
+    },
+    {
+      "fieldname": "provider_name",
+      "fieldtype": "Select",
+      "label": "Provider Name",
+      "options": "OpenRouter\nSiliconFlow\nHugging Face\nGroq\nGitHub Models\nGoogle Gemini\nAnthropic Claude\nOllama\nCoze\nTogether\nAlibabaCloud\nNVIDIA NIM\nCometAPI\nVercel AI\nLLM7",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "model_name",
+      "fieldtype": "Data",
+      "label": "Model Name",
+      "placeholder": "e.g., deepseek-v3, gpt-4o, llama-3.1",
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_key",
+      "fieldtype": "Password",
+      "label": "API Key",
+      "no_copy": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "api_endpoint",
+      "fieldtype": "Data",
+      "label": "API Endpoint",
+      "placeholder": "https://api.provider.com/v1/chat/completions",
+      "reqd": 1
+    },
+    {
+      "fieldname": "provider_url",
+      "fieldtype": "Data",
+      "label": "Provider Website",
+      "read_only": 1
+    },
+    {
+      "fieldname": "capacity_section",
+      "fieldtype": "Section Break",
+      "label": "Capacity & Performance"
+    },
+    {
+      "fieldname": "rate_limit",
+      "fieldtype": "Int",
+      "label": "Rate Limit (requests/min)",
+      "default": 60
+    },
+    {
+      "fieldname": "max_tokens",
+      "fieldtype": "Int",
+      "label": "Max Tokens",
+      "default": 4096
+    },
+    {
+      "fieldname": "temperature",
+      "fieldtype": "Float",
+      "label": "Temperature (0-2)",
+      "default": 0.7,
+      "description": "Controls randomness of responses"
+    },
+    {
+      "fieldname": "timeout_seconds",
+      "fieldtype": "Int",
+      "label": "Timeout (seconds)",
+      "default": 30
+    },
+    {
+      "fieldname": "configuration_section",
+      "fieldtype": "Section Break",
+      "label": "Configuration"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nInactive\nMaintenance",
+      "default": "Inactive",
+      "reqd": 1
+    },
+    {
+      "fieldname": "priority",
+      "fieldtype": "Int",
+      "label": "Priority (1=highest)",
+      "default": 99,
+      "description": "Lower number = higher priority for fallback"
+    },
+    {
+      "fieldname": "is_fallback",
+      "fieldtype": "Check",
+      "label": "Use as Fallback"
+    },
+    {
+      "fieldname": "is_local",
+      "fieldtype": "Check",
+      "label": "Is Local (Ollama)",
+      "read_only": 0
+    },
+    {
+      "fieldname": "test_results_section",
+      "fieldtype": "Section Break",
+      "label": "Test Results"
+    },
+    {
+      "fieldname": "last_test_time",
+      "fieldtype": "Datetime",
+      "label": "Last Test Time",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_test_status",
+      "fieldtype": "Select",
+      "label": "Last Test Status",
+      "options": "Not Tested\nSuccess\nFailed",
+      "read_only": 1,
+      "default": "Not Tested"
+    },
+    {
+      "fieldname": "test_error_message",
+      "fieldtype": "Small Text",
+      "label": "Test Error Message",
+      "read_only": 1
+    },
+    {
+      "fieldname": "usage_section",
+      "fieldtype": "Section Break",
+      "label": "Usage Statistics"
+    },
+    {
+      "fieldname": "total_requests",
+      "fieldtype": "Int",
+      "label": "Total Requests",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "failed_requests",
+      "fieldtype": "Int",
+      "label": "Failed Requests",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "avg_response_time",
+      "fieldtype": "Float",
+      "label": "Avg Response Time (ms)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "monthly_cost",
+      "fieldtype": "Currency",
+      "label": "Estimated Monthly Cost",
+      "read_only": 1,
+      "default": 0
+    }
+  ],
+  "links": [],
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "smart_ai_chatbot",
+  "name": "AI API Configuration",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Administrator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "System Manager",
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

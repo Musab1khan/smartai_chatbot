@@ -1,0 +1,162 @@
+{
+  "actions": [],
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "session_info_section",
+    "user",
+    "language",
+    "session_title",
+    "description",
+    "ai_provider_used",
+    "settings_section",
+    "status",
+    "is_archived",
+    "model_used",
+    "temperature_used",
+    "performance_section",
+    "total_messages",
+    "total_cost",
+    "session_duration",
+    "created",
+    "modified"
+  ],
+  "fields": [
+    {
+      "fieldname": "session_info_section",
+      "fieldtype": "Section Break",
+      "label": "Session Information"
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "options": "User",
+      "label": "User",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "language",
+      "fieldtype": "Select",
+      "label": "Language",
+      "options": "English\nUrdu\nArabic",
+      "default": "English",
+      "reqd": 1
+    },
+    {
+      "fieldname": "session_title",
+      "fieldtype": "Data",
+      "label": "Session Title",
+      "placeholder": "Auto-generated from first message"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "ai_provider_used",
+      "fieldtype": "Data",
+      "label": "AI Provider Used",
+      "read_only": 1
+    },
+    {
+      "fieldname": "settings_section",
+      "fieldtype": "Section Break",
+      "label": "Settings"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Active\nPaused\nClosed",
+      "default": "Active"
+    },
+    {
+      "fieldname": "is_archived",
+      "fieldtype": "Check",
+      "label": "Is Archived"
+    },
+    {
+      "fieldname": "model_used",
+      "fieldtype": "Data",
+      "label": "Model Used",
+      "read_only": 1
+    },
+    {
+      "fieldname": "temperature_used",
+      "fieldtype": "Float",
+      "label": "Temperature Setting",
+      "read_only": 1
+    },
+    {
+      "fieldname": "performance_section",
+      "fieldtype": "Section Break",
+      "label": "Performance Metrics"
+    },
+    {
+      "fieldname": "total_messages",
+      "fieldtype": "Int",
+      "label": "Total Messages",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "total_cost",
+      "fieldtype": "Currency",
+      "label": "Total Cost (USD)",
+      "read_only": 1,
+      "default": 0
+    },
+    {
+      "fieldname": "session_duration",
+      "fieldtype": "Data",
+      "label": "Session Duration",
+      "read_only": 1
+    },
+    {
+      "fieldname": "created",
+      "fieldtype": "Datetime",
+      "label": "Created",
+      "read_only": 1
+    },
+    {
+      "fieldname": "modified",
+      "fieldtype": "Datetime",
+      "label": "Last Modified",
+      "read_only": 1
+    }
+  ],
+  "links": [
+    {
+      "link_doctype": "Chat Message",
+      "link_fieldname": "chat_session"
+    }
+  ],
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "SmartAI Chatbot",
+  "name": "Chat Session",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "All",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

@@ -1,0 +1,189 @@
+{
+  "actions": [],
+  "creation": "2024-01-01 00:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "",
+  "engine": "InnoDB",
+  "field_order": [
+    "message_info_section",
+    "chat_session",
+    "role",
+    "content",
+    "language",
+    "metadata_section",
+    "content_type",
+    "has_attachments",
+    "has_charts",
+    "has_suggested_actions",
+    "processing_section",
+    "intent",
+    "entities",
+    "sentiment",
+    "confidence_score",
+    "performance_section",
+    "tokens_used",
+    "response_time_ms",
+    "ai_provider_used",
+    "model_used",
+    "created",
+    "modified"
+  ],
+  "fields": [
+    {
+      "fieldname": "message_info_section",
+      "fieldtype": "Section Break",
+      "label": "Message Information"
+    },
+    {
+      "fieldname": "chat_session",
+      "fieldtype": "Link",
+      "options": "Chat Session",
+      "label": "Chat Session",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "role",
+      "fieldtype": "Select",
+      "label": "Role",
+      "options": "user\nassistant\nsystem",
+      "reqd": 1,
+      "read_only": 1
+    },
+    {
+      "fieldname": "content",
+      "fieldtype": "Long Text",
+      "label": "Message Content",
+      "reqd": 1
+    },
+    {
+      "fieldname": "language",
+      "fieldtype": "Select",
+      "label": "Language",
+      "options": "English\nUrdu\nArabic",
+      "read_only": 1
+    },
+    {
+      "fieldname": "metadata_section",
+      "fieldtype": "Section Break",
+      "label": "Metadata"
+    },
+    {
+      "fieldname": "content_type",
+      "fieldtype": "Select",
+      "label": "Content Type",
+      "options": "text\nimage\naudio\ndocument",
+      "default": "text"
+    },
+    {
+      "fieldname": "has_attachments",
+      "fieldtype": "Check",
+      "label": "Has Attachments"
+    },
+    {
+      "fieldname": "has_charts",
+      "fieldtype": "Check",
+      "label": "Has Charts"
+    },
+    {
+      "fieldname": "has_suggested_actions",
+      "fieldtype": "Check",
+      "label": "Has Suggested Actions"
+    },
+    {
+      "fieldname": "processing_section",
+      "fieldtype": "Section Break",
+      "label": "AI Processing"
+    },
+    {
+      "fieldname": "intent",
+      "fieldtype": "Data",
+      "label": "Detected Intent",
+      "read_only": 1
+    },
+    {
+      "fieldname": "entities",
+      "fieldtype": "Code",
+      "label": "Extracted Entities (JSON)",
+      "read_only": 1,
+      "options": "json"
+    },
+    {
+      "fieldname": "sentiment",
+      "fieldtype": "Select",
+      "label": "Sentiment",
+      "options": "Positive\nNegative\nNeutral",
+      "read_only": 1
+    },
+    {
+      "fieldname": "confidence_score",
+      "fieldtype": "Float",
+      "label": "Confidence Score",
+      "read_only": 1
+    },
+    {
+      "fieldname": "performance_section",
+      "fieldtype": "Section Break",
+      "label": "Performance"
+    },
+    {
+      "fieldname": "tokens_used",
+      "fieldtype": "Int",
+      "label": "Tokens Used",
+      "read_only": 1
+    },
+    {
+      "fieldname": "response_time_ms",
+      "fieldtype": "Float",
+      "label": "Response Time (ms)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "ai_provider_used",
+      "fieldtype": "Data",
+      "label": "AI Provider Used",
+      "read_only": 1
+    },
+    {
+      "fieldname": "model_used",
+      "fieldtype": "Data",
+      "label": "Model Used",
+      "read_only": 1
+    },
+    {
+      "fieldname": "created",
+      "fieldtype": "Datetime",
+      "label": "Created",
+      "read_only": 1
+    },
+    {
+      "fieldname": "custom_modified",
+      "fieldtype": "Datetime",
+      "label": "Custom Modified",
+      "read_only": 1
+    }
+  ],
+  "links": [],
+  "modified": "2024-01-01 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "smart_ai_chatbot",
+  "name": "Chat Message",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "All",
+      "share": 1,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
+}

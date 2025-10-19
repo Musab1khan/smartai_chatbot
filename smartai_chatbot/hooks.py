@@ -343,3 +343,5 @@ standard_portal_menu_items = [
 standard_queries_for_doctypes = {
     "Chat Session": "smartai_chatbot.queries.get_chat_sessions",
 }
+
+app_include_js = ["smartai_chatbot/js/chat_button.js"]

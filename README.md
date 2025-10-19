@@ -1,41 +1,79 @@
-### Smart AI Chatbot
+# SmartAI Chatbot for Frappe/ERPNext
 
-chatbot
+SmartAI Chatbot is a custom Frappe/ERPNext app that brings AI-powered chatbot functionality into your ERP system. It supports multiple AI providers (OpenRouter, Groq, Hugging Face, Google Gemini, etc.) and enables smart conversations inside Frappe.
 
-### Installation
+---
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+## Features
+-  Multi-provider AI support  
+-  Real-time chat sessions  
+-  AI API Configuration management  
+-  Chat history storage  
+-  Easy-to-extend architecture  
 
+---
+
+##  Installation
+
+### 1. Clone the repository
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app smartai_chatbot
+cd ~/frappe-bench/apps
+bench get-app  https://github.com/Musab1khan/smartai_chatbot.git
 ```
 
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
+### 2. Install the app
 ```bash
-cd apps/smartai_chatbot
-pre-commit install
+bench --site yoursite.local install-app smartai_chatbot
 ```
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+### 3. Migrate & Clear Cache
+```bash
+bench --site yoursite.local migrate
+bench --site yoursite.local clear-cache
+```
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+---
 
-### CI
+##  Modules & DocTypes
 
-This app can use GitHub Actions for CI. The following workflows are configured:
+| DocType Name             | Purpose                                      |
+|--------------------------|----------------------------------------------|
+| AI API Configuration     | Manage AI provider keys & endpoints          |
+| Chat Session             | Store user chat sessions                     |
+| Chat Message             | Store individual messages in a session       |
 
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
+---
 
+##  Configuration
 
-### License
+1. Open **AI API Configuration**:
+   ```
+   Desk > AI API Configuration > New
+   ```
 
-mit
+2. Select a provider (e.g. OpenRouter, Groq, Hugging Face)
+
+3. Enter your **API key** and **model name**
+
+4. Save
+
+---
+
+##  Usage
+
+1. Create a new **Chat Session**
+2. Type your message
+3. AI response will appear automatically
+
+---
+
+##  Tech Stack
+
+- **Framework**: Frappe/ERPNext  
+- **Language**: Python, JavaScript  
+- **AI Providers**: OpenRouter, Groq, Hugging Face, Google Gemini, etc.
+
+---
+**GitHub**: [Musab1khan](https://github.com/Musab1khan)
+
+---
